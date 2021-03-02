@@ -1,8 +1,15 @@
 import React from 'react'
 
-function AlternativeMessage(props: any) {
+type messageDataType = {
+    avatar: string;
+    name: string;
+    message: string;
+    time: string;
+}
+
+function AlternativeMessage(props: messageDataType) {
     return (
-        <div>
+        <div className='message'>
             <div><img src={props.avatar} alt="avatar"/></div>
             <span>{props.name}</span>
             <div>{props.message}</div>

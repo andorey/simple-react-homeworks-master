@@ -9,7 +9,7 @@ type messageDataType = {
 
 function Message(props: messageDataType) {
     return (
-        <div>
+        <div className='message'>
             <div><img src={props.avatar} alt="avatar"/></div>
             <span>{props.name}</span>
             <div>{props.message}</div>
