@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import css from './Message.module.css';
 
 type messageDataType = {
     avatar: string;
@@ -9,11 +10,16 @@ type messageDataType = {
 
 function AlternativeMessage(props: messageDataType) {
     return (
-        <div className='message'>
-            <div><img src={props.avatar} alt="avatar"/></div>
-            <span>{props.name}</span>
-            <div>{props.message}</div>
-            <span>{props.time}</span>
+        <div className={css.message}>
+            <img src={props.avatar} alt={'avatar'} className={css.avatar}/>
+
+            <div className={css.angle} />
+
+            <div className={css.content}>
+                <div className={css.name}>{props.name}</div>
+                <div className={css.text}>{props.message}</div>
+                <div className={css.time}>{props.time}</div>
+            </div>
         </div>
     )
 }
