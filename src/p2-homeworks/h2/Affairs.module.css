@@ -1,3 +1,50 @@
-.someClass {
+.button {
+    margin: 10px;
+    width: 80px;
+    font-size: 1.1em;
+    background: #003300;
+    color: #99ff99;
+    outline: none;
+}
 
+.button:focus {
+    outline: #99ff99 solid 1px;
+}
+
+.button:active {
+    background: #99ff99;
+}
+
+.active {
+    background: #335533;
+}
+
+.affair {
+    display: flex;
+}
+
+.item {
+    margin: 10px;
+    width: 100px;
+}
+
+.item_button {
+    width: 40px;
+    height: 30px;
+    border-radius: 10px;
+    background: #335533;
+    font-size: 1.1em;
+    color: lime;
+}
+
+.high {
+    color: red;
+}
+
+.middle {
+    color: orange;
+}
+
+.low {
+    color: lime;
 }
