@@ -1,22 +1,33 @@
 .button {
-    margin: 10px;
+    display: flex;
+}
+
+.button button{
+    margin: 5px 0 0 10px;
     width: 80px;
     font-size: 1.1em;
-    background: #003300;
-    color: #99ff99;
+    background: #183718;
+    color: #b9feb9;
     outline: none;
+    border-radius: 7px;
 }
 
-.button:focus {
-    outline: #99ff99 solid 1px;
+.button button:focus {
+    outline: #b9feb9 solid 1px;
 }
 
-.button:active {
-    background: #99ff99;
+.button button:active {
+    background: #b9feb9;
 }
 
-.active {
-    background: #335533;
+.button button:hover {
+    background: lightgreen;
+    color: #003300;
+}
+
+.button button.active {
+    background: #01543e;
+    color: #51ff00;
 }
 
 .affair {
@@ -29,10 +40,10 @@
 }
 
 .item_button {
-    width: 40px;
+    width: 50px;
     height: 30px;
     border-radius: 10px;
-    background: #335533;
+    background: #183718;
     font-size: 1.1em;
     color: lime;
 }
