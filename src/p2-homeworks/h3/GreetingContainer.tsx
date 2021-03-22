@@ -20,14 +20,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         setName(e.currentTarget.value.trim())
     }
     const addUser = () => {
-        if( name ){
+        if (name) {
             alert(`Hello  ${name}!`)
             addUserCallback(name)
             setName('')
-        }else{
+        } else {
             setError('You need to enter a name')
         }
-
     }
 
     const onKeyPressInput = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -41,15 +40,13 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         }
     }
 
-    const totalUsers = users.length
-
     return (
         <Greeting
             name={name}
             setNameCallback={setNameCallback}
             addUser={addUser}
             error={error}
-            totalUsers={totalUsers}
+            totalUsers={users}
             onKeyPressInput={onKeyPressInput}
         />
     )
