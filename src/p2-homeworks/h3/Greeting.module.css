@@ -5,3 +5,8 @@
 .error {
     border: 1px solid red;
 }
+
+.errorField {
+    color: red;
+    font-size: 12px;
+}
