@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AlternativeSuperInputText() {
+export function AlternativeSuperInputText() {
     return (
         <input/>
     )
 }
 
-export default AlternativeSuperInputText
+
