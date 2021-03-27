@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
+import css from './SuperCheckbox.module.css';
 
-function AlternativeSuperCheckbox() {
+type PropsType = {
+    event: (value: boolean) => void
+    onChange: boolean
+}
+
+export function AlternativeSuperCheckbox(props: PropsType) {
+
+    const check = (e: React.ChangeEvent<HTMLInputElement>) => props.event(e.currentTarget.checked)
+
     return (
-        <input/>
+        <label className={css.myBox}>
+            <input type="checkbox" checked={props.onChange} onChange={check}/>
+        </label>
     )
 }
 
-export default AlternativeSuperCheckbox
