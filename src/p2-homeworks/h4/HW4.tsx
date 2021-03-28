@@ -19,8 +19,6 @@ function HW4() {
 
     const [checked, setChecked] = useState<boolean>(false)
 
-    const event = (e: boolean) => setChecked(e) //wtf
-
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
     return (
@@ -68,14 +66,14 @@ function HW4() {
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
-                <SuperCheckbox checked={checked} onChange={testOnChange}/>
+                <SuperCheckbox checked={checked} onChange={testOnChange} />
             </div>
 
             <hr/>
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeSuperInputText/>*/}
             {/*<AlternativeSuperButton/>*/}
-            <AlternativeSuperCheckbox onChange={checked} event={event}/>
+            <AlternativeSuperCheckbox checked={checked} onChange={testOnChange} onChangeChecked={setChecked} />
             <hr/>
         </div>
     )

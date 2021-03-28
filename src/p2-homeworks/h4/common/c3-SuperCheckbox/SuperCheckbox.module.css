@@ -40,6 +40,7 @@
     height: 40px;
     width: 40px;
     border: cyan solid 1px;
+    cursor: pointer;
 }
 
 .myBox input:checked {

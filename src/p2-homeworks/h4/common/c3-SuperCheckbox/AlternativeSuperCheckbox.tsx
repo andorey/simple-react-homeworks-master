@@ -1,19 +1,27 @@
-import React, { ChangeEvent } from 'react'
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
 import css from './SuperCheckbox.module.css';
 
-type PropsType = {
-    event: (value: boolean) => void
-    onChange: boolean
+type DefaultInputType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
+
+type PropsType = DefaultInputType & {
+    onChangeChecked?: (checked: boolean) => void
 }
 
-export function AlternativeSuperCheckbox(props: PropsType) {
-
-    const check = (e: React.ChangeEvent<HTMLInputElement>) => props.event(e.currentTarget.checked)
+export const AlternativeSuperCheckbox: React.FC<PropsType> = ({
+        type, onChange, onChangeChecked, className, children, ...restProps
+    }) => {
+    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        onChange && onChange(e)
+        onChangeChecked && onChangeChecked(e.currentTarget.checked)
+        // сделайте так чтоб работал onChange и onChangeChecked
+    }
 
     return (
         <label className={css.myBox}>
-            <input type="checkbox" checked={props.onChange} onChange={check}/>
+            <input
+                type='checkbox'
+                onChange={onChangeCallback}
+                {...restProps}  />
         </label>
     )
 }
-
