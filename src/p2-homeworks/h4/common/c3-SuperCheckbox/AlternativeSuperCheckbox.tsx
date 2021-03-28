@@ -7,21 +7,20 @@ type PropsType = DefaultInputType & {
     onChangeChecked?: (checked: boolean) => void
 }
 
-export const AlternativeSuperCheckbox: React.FC<PropsType> = ({
-        type, onChange, onChangeChecked, className, children, ...restProps
-    }) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
+export function AlternativeSuperCheckbox( { type, onChange, onChangeChecked, className, children,
+                                             ...restProps }:PropsType ) {
+
+    const chackedCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChange && onChange(e)
         onChangeChecked && onChangeChecked(e.currentTarget.checked)
-        // сделайте так чтоб работал onChange и onChangeChecked
     }
 
     return (
         <label className={css.myBox}>
-            <input
-                type='checkbox'
-                onChange={onChangeCallback}
-                {...restProps}  />
+            <input type='checkbox'
+                   onChange={chackedCallback}
+                   {...restProps}
+            />
         </label>
     )
 }
